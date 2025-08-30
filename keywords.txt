@@ -1,0 +1,37 @@
+#######################################
+# Syntax Coloring Map For MicroI2C
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+MicroWire_begin	KEYWORD2
+MicroWire_beginTransmission	KEYWORD2
+MicroWire_endTransmission	KEYWORD2
+MicroWire_requestFrom	KEYWORD2
+MicroWire_write	KEYWORD2
+MicroWire_read	KEYWORD2
+MicroWire_start	KEYWORD2
+MicroWire_stop	KEYWORD2
+MicroWire_sda_high	KEYWORD2
+MicroWire_sda_low	KEYWORD2
+MicroWire_sda_read	KEYWORD2
+MicroWire_scl_high	KEYWORD2
+MicroWire_scl_low	KEYWORD2
+MicroWire_scl_read	KEYWORD2
+MicroWire_scl_high_wait	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+MICRO_WIRE_HANDLE	LITERAL1
+MICRO_WIRE_SDA	LITERAL1
+MICRO_WIRE_SCL	LITERAL1
+MICRO_WIRE_DELAY	LITERAL1
+MICRO_WIRE_AVR	LITERAL1

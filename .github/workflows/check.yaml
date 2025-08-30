@@ -1,0 +1,29 @@
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
+    steps:
+      - uses: actions/checkout@v5
+      - run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          df -h
+      - uses: actions/cache@v4
+        with:
+          path: ~/.arduino15
+          key: arduino-cores-${{ hashFiles('Makefile') }}
+      - run: |
+          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=/usr/local/bin sh
+      - run: |
+          make install
+      - run: |
+          make test
+      - run: |
+          make coverage
+      - run: |
+          make build
